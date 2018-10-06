@@ -1,0 +1,2 @@
+<view>{{city}}{{cityType}}</view>
+<view bindtap="scanCode">扫一扫</view>

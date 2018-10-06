@@ -1,0 +1,14 @@
+/* pages/input/input.wxss */
+label {
+  font-size: 28rpx;
+  display: block;
+  padding-top: 40rpx;
+  padding-left: 15rpx;
+  padding-bottom: 20rpx;
+  color: #D5D5D5
+}
+
+input {
+  border-bottom: 0.5rpx solid #D5D5D5;
+  margin: 0 15rpx;
+}

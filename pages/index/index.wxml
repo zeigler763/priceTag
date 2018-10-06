@@ -1,0 +1,42 @@
+<header bindmyevent="clickTitle" ulli="{{ulli}}"></header>
+<cell></cell>
+
+<input bindinput="keyword" placeholder="默认文字"></input>
+<button bindtap="requestSomething" data-keyword="{{word}}">搜索</button>
+
+<button bindtap="storeSearchWord">储存搜索内容</button>
+<button bindtap="showSearchWord">显示搜索内容</button>
+<view>{{storeWord}}</view>
+<!-- <canvas canvas-id='shareCanvas' style='width:300px;height:500px'></canvas> -->
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
+<button open-type="openSetting">打开授权设置页</button>
+<i-button type="primary" bind:click="handleClick">这是一个按钮</i-button>
+<i-tag 
+    class="i-tags"
+    name="单个标签">
+    标签一
+</i-tag>
+<i-tag 
+    class="i-tags"
+    name="单个标签" 
+    color="red">
+    标签一
+</i-tag>
+<i-tag 
+    class="i-tags" 
+    name="标签一" 
+    color="green">
+    标签一
+</i-tag>
+<i-tag 
+    class="i-tags" 
+    name="标签一" 
+    color="blue">
+    标签一
+</i-tag>
+<i-tag 
+    class="i-tags" 
+    name="标签一" 
+    color="yellow">
+    标签一
+</i-tag>

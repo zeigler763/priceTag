@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "查看启动日志",
+  "navigationBarBackgroundColor": "#000000",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+
+  "usingComponents": {
+    "cell": "../cell/cell"
+  }
+}

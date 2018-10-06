@@ -1,0 +1,58 @@
+<view style=' margin-bottom: 46px'>
+  <view style='margin: 15px 10px 0px;text-align: center'>
+    <text style='font-size:14px'>您当前所在位置为:<text style='font-size:15px'>{{city}}</text></text>
+  </view>
+  <view style='margin: 15px 10px 5px'>
+    <text style='font-size:14px'>上传购药发票/小票与药品照片</text><image style='width:14px;height:14px;padding: 0px 2px' src='../../images/what.png' bindtap='showShareImage'></image>
+  </view>
+  <view style='margin: 0px 10px 10px'>
+    <text style='font-size:12px;color: gray'>发票/小票/收据/医保流水单等&清晰的药品照片</text>
+  </view>
+<view class='header'>
+    <image class='photoImage' style='width:{{pictureWidth}}px;height:{{pictureWidth}}px' bindtap='clickImage' wx:for="{{avatarUrl}}"  data-index="{{index}}" wx:key="unique" src="{{item}}">
+      <image catchtap='deleteImage' data-index='{{index}}' class='delete' src='../../images/delete.png'></image>
+    </image>
+    <image class='addBtn' style='width:{{pictureWidth}}px;height:{{pictureWidth}}px' bindtap="bindViewTap" src='../../images/addpic.png' type="submit" hidden='{{buttonHidden}}'>添加图片</image>
+ </view>
+  <view class='line'><view class='line_conner'></view></view>
+    <picker mode="selector" range="{{array}}" value="{{index}}" range-key="name" bindchange="listenerPickerSelected">
+       <view class='container'>
+      <text class='left'>购买渠道</text>
+      <text class='right'>{{channelName}}</text>
+    </view>
+    </picker>
+ <view class='interval_line'></view>
+
+ <view class='content'>
+    <view class='content-view' wx:for="{{drugArray}}">
+  <image class='image-view' src='{{item.images[0]}}?imageView2/0/w/600/h/600'></image>
+  <view class='right-view'>  
+    <text class='title'>{{item.name}}</text>
+    <text class='price'>每件补贴￥ {{item.reimbursePrice}}</text>
+    <view><text class='distance'>限补{{item.limitCount}}件</text></view>
+  </view>
+  </view>
+    <view bindtap='scanCode' class='scan'>
+    <image style='width:100px;height:40px;margin: 0 auto; padding: 8px 0px' src='../../images/add_drug_btn_icon.png'></image>
+    <text style='font-size:12px'>扫条码添加药品</text>
+    </view>
+ </view>
+
+  <view class='add_view'>
+    <view class='add_left'>
+      <text>￥1023</text>
+      <text>合计补贴</text>
+    </view>
+    <view class='add_right'></view>
+ </view>
+ 
+</view>
+
+
+
+<modal hidden="{{hiddenModal}}" no-cancel bindconfirm="showShareImage" confirmText="我知道了" >
+<view style='display:flex;justify-content: center;'>
+  <image style='width:420rpx;height:560rpx' src='../../images/drug_demo_pic.png'></image>  
+</view>
+</modal> 
+ 

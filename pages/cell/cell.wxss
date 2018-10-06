@@ -1,0 +1,45 @@
+/* pages/cell/cell.wxss */
+.content-view {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  color: yellowgreen;
+  padding-top: 30rpx;
+  font-size: 32rpx;
+}
+
+.price {
+  color: orangered;
+  font-size: 32rpx;
+}
+
+.distance {
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+
+.right-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-view {
+  width: 200rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin: 30rpx 24rpx;
+}
+
+.bottom-line {
+  width: 726rpx;
+  height: 1px;
+  margin-left: 24rpx;
+  background-color: #999
+}
+
+.content-view:active {
+  background-color: #ddd;
+}

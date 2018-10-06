@@ -1,0 +1,12 @@
+<!-- <view><canvas  hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas"/></view> -->
+  <!-- <view style="width: 686rpx;height: 686rpx;background:#f1f1f1;"></view> -->
+<label style="width: 686rpx;height: 686rpx;background:#f1f1f1;display:block">二维码</label>  
+<form bindsubmit="formSubmit">
+  <input name="code" type="text" maxlength="255" placeholder='测试'></input>
+  <button class="mybtn" form-type='submit' type="primary">生成二维码</button> 
+</form>
+  
+<view bindtap="scanCode">扫一扫</view>
+  <input name="code" type="text" maxlength="255" placeholder='haha'></input>
+<cell wx:for="{{array}}" title="{{item.title}}" price="{{item.price}}" distance="{{item.distance}}"></cell>
+

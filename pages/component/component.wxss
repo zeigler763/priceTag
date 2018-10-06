@@ -1,0 +1,5 @@
+
+ .inner {
+  color: yellowgreen;
+  padding: 0px 10px;
+} 

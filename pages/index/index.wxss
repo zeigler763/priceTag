@@ -1,0 +1,30 @@
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+  .scroll-view-x {
+      width: 100%;
+      height: 34px;
+      border-bottom: 1px solid #666;  
+  }
+  .hengxiangul {
+      width: 100%;
+      height: 34px;
+      white-space: nowrap;  
+  }
+    .hengxiangul li{
+      line-height: 34px;
+      padding: 0 10px;
+      color: #666;
+      font-size: 12px;
+    }
+
+  .red-text {
+    color: red
+  }  
+  
+ 
+
+
+  

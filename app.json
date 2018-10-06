@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/learn/learn",
+    "pages/title/title",
+    "pages/input/input",
+    "pages/textView/textView",
+    "pages/scanCode/scanCode",
+    "pages/subsidyDetails/subsidyDetails",
+    "pages/animate/animate"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0000",
+    "navigationBarTitleText": "购物天堂",
+    "navigationBarTextStyle": "wiite"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "中间"
+      },
+      {
+        "pagePath": "pages/learn/learn",
+        "text": "最后"
+      },
+      {
+        "pagePath": "pages/scanCode/scanCode",
+        "text": "扫码"
+      }
+    ]
+  }
+}

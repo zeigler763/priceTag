@@ -1,0 +1,1 @@
+<view animation="{{animationData}}" bindtap="rotateAndScaleThenTranslate" style="background:red;height:100rpx;width:100rpx"></view>

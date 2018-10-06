@@ -1,0 +1,11 @@
+<!--pages/cell/cell.wxml-->
+<view class='content-view'>
+  <image class='image-view' src='../../images/img1.jpg'></image>
+  <view class='right-view'>  
+    <text class='title'>{{title}}</text>
+    <text class='price'>{{price}}元/月</text>
+    <text class='distance'>距离我{{distance}}米</text>
+  </view>
+</view>
+ <view class='bottom-line'></view>
+<slot></slot> 

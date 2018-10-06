@@ -1,0 +1,4 @@
+<!--pages/title/title.wxml-->
+<view class='title'>{{title}}</view>
+<input bindinput="changeText" placeholder="修改title"></input>
+<button bindtap="changeTitle">修改</button>

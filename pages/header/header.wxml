@@ -1,0 +1,6 @@
+<!--pages/header/header.wxml-->
+<scroll-view scroll-x="true" class="scroll-view-x">
+  <ul class="hearderul" >
+    <li bindtap="clickHeader" data-title="{{item}}" data-index="{{index}}" wx:for="{{ulli}}">{{item}}</li>
+  </ul>
+</scroll-view>

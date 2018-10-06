@@ -1,0 +1,4 @@
+<button bindtap="clickTextField">textField表单</button>
+<button bindtap="clickTextView">textView</button>
+<button bindtap='clickDetails'>补贴详情页面</button>
+<button bindtap='clickAnimate'>动画</button>

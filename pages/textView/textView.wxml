@@ -1,0 +1,2 @@
+
+<textarea bindinput="input" placeholder="自动变高" class="textArea"></textarea>
