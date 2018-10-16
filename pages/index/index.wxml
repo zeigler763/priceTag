@@ -1,42 +1,62 @@
-<header bindmyevent="clickTitle" ulli="{{ulli}}"></header>
-<cell></cell>
+<view class='page_body'>
+  <!-- 顶部的收藏显示 -->
+  <view class='top_nav'>
+    <image class='top_bg' src="/images/top_backgroud.png"></image>
+      <view class='back_view'>
+        <button class='top_avatar_btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+          <image class='top_avatar' src='{{avatarUrl}}'></image>
+        </button>
+        <text class='top_label'>我的收藏</text>
+        <image bindtap='clickSearchCode' class='top_search_code' src='/images/search_code.png'></image>
+        <view class='top_count_label'>便签数
+          <text class='top_count'>{{pageCount}}<text>
+            <text class='top_num_label'>个</text>
+            </text>
+          </text>
+        </view>
+      </view>
+  </view>
 
-<input bindinput="keyword" placeholder="默认文字"></input>
-<button bindtap="requestSomething" data-keyword="{{word}}">搜索</button>
+  <!-- headerBar -->
+  <scroll-view scroll-x="true" class="scroll-view-x">
+      <view class=".hearder_title {{currentTab==index ? '.hearder_title_current' : ''}}" bindtap="clickHeaderClass" data-title="{{item}}" data-index="{{index}}" wx:key="{{item}}" wx:for="{{classes}}">{{item}}
+      </view>
+  </scroll-view>
 
-<button bindtap="storeSearchWord">储存搜索内容</button>
-<button bindtap="showSearchWord">显示搜索内容</button>
-<view>{{storeWord}}</view>
-<!-- <canvas canvas-id='shareCanvas' style='width:300px;height:500px'></canvas> -->
-<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
-<button open-type="openSetting">打开授权设置页</button>
-<i-button type="primary" bind:click="handleClick">这是一个按钮</i-button>
-<i-tag 
-    class="i-tags"
-    name="单个标签">
-    标签一
-</i-tag>
-<i-tag 
-    class="i-tags"
-    name="单个标签" 
-    color="red">
-    标签一
-</i-tag>
-<i-tag 
-    class="i-tags" 
-    name="标签一" 
-    color="green">
-    标签一
-</i-tag>
-<i-tag 
-    class="i-tags" 
-    name="标签一" 
-    color="blue">
-    标签一
-</i-tag>
-<i-tag 
-    class="i-tags" 
-    name="标签一" 
-    color="yellow">
-    标签一
-</i-tag>
+  <!-- 内容list -->
+  <view style='padding:0 0 40rpx 0;'>
+    <view style='display: flex; flex-direction: column;' catchtap='clickCell' data-index='{{index}}' wx:for="{{cards}}" wx:key="{{item.title}}">
+    <view hidden='{{!item.isFlag}}' class='card_list'>
+      <image class='card_side' src='/images/side_yellow.png'></image>
+      <view class='card_content'>
+      <view class='card_content_top'>
+        <view style='padding-left:15rpx;padding-right:10px;width:570rpx;display:flex;justify-content: flex-star;'>
+          <text style='padding-right:10rpx;'>{{item.des}}</text>
+          <text style='width:100rpx;'>{{item.title}}</text>
+        </view>
+        <view>
+          <view wx:if="{{item.onStar}}">
+            <image catchtap='clickStar' data-index="{{index}}" src='/images/star.png'></image>
+          </view>
+          <view wx:else>
+            <image catchtap='clickStar' data-index="{{index}}" src='/images/no_star.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='card_content_bottom'>
+        <text style='width:600rpx'>有温暖的灯光营造氛围有温暖的灯光营造氛围有温暖的灯光营造氛围</text>
+        <view>
+          <image src='/images/content_pic.png'></image>
+        </view>
+      </view>
+    </view>
+    </view>
+    <view hidden='{{item.isFlag}}' class='card_list_flag' style="background-color:yellow;">
+      <image class='card_side' src='/images/side_yellow.png' mode='aspectFit'></image>
+    </view>
+  </view>
+  </view>
+</view>
+
+
+

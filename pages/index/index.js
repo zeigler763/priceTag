@@ -1,145 +1,66 @@
 //index.js
 //获取应用实例
 const app = getApp()
-var initData = 'this is first line \n this is second line'
-var extraLine = [];
 var index = 0;
-
+var that;
 Page({
   data: {
-    ulli: ["于世民", "郝峰", "刘鑫", "毛海滨", "王鹏", "张小彬", "张琳","于世民","郝峰","刘鑫","毛海滨","王鹏","张小彬","张琳"],
-    iconSize: [20, 30, 40, 50, 60, 70],
-    iconColor: [
-      'red', 'orange', 'yellow', 'green', 'rgb(0,255,255)', 'blue', 'purple'
-    ],
-    iconType: [
-      'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
-    ],
-    text: initData,
-    nodes: [{
-      name: 'div',
-      attrs: {
-        class: 'div_class',
-        style: 'line-height: 60px; color: red;'
-      },
-      children: [{
-        name: 'div',
-        attrs: {
-          class: 'div_class',
-          style: 'color: yellow;'
-        },
-        children:[{
-          type: 'text',
-          text: 'Hello&nbsp;World!'
-        }]
-      },{
-          name: 'div',
-          attrs: {
-            class: 'div_class',
-            style: 'color: red;'
-          },
-          children: [{
-            type: 'text',
-            text: 'haha wowo haha!'
-          }]
-      }]
-    }],
-    word:"",
-    storeWord:""
+    nickName: '',
+    avatarUrl: '/images/default_avart.png',
+    pageCount: 10,
+    classes: ["全部", "家具", "书桌", "电脑耗材", "音响设备", "好友推荐"],
+    currentTab: 0, // 导航栏切换索引
+    //卡片数据
+    cards: [
+      { title: "卧室家具", price: "时尚简约时尚简约时尚简约时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬机了萨芬机了萨芬机了萨芬", onStar: true, isFlag: true },
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: true, isFlag: true },
+      { title: "音响设备", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: true, isFlag: false },
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，开行不得发动机了萨芬", onStar: true, isFlag: false },
+      { title: "卧室家具", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬机了萨芬机了萨芬机了萨芬", onStar: false, isFlag: true },
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: false, isFlag: true },
+      { title: "音响设备", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: false, isFlag: true },
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，开行不得发动机了萨芬", onStar: false, isFlag: true },
+      ],
   },
   onLoad: function () {
-    
-  },
-
-
-  keyword: function (e) {
-    this.setData({
-      word:e.detail.value
-    })
-  },
-
-  requestSomething: function (e){
-    var word = null
-    if(e){
-      //绑定给自己
-      // word = e.currentTarget.dataset.keyword
-      //直接操作数据
-      word = this.data.word
-    }
-    console.log(word)
-  },
-
-  tap: function() {
-    console.log('tap')
-  },
-
-  add: function (e) {
-    extraLine.push('other line'+index)
-    index ++
-    this.setData({
-      text: initData + '\n' + extraLine.join('\n')
-    })
-  },
-  remove: function (e) {
-    if (extraLine.length > 0) {
-      extraLine.pop()
-      index --
-      this.setData({
-        text: initData + '\n' + extraLine.join('\n')
-      })
-    }
-  },
-
-  clickTitle: function (e){
-    wx.navigateTo({
-      url: '../title/title?id=' + e.detail.title + '&index=' + e.detail.index,
-    })
-  },
-
-  storeSearchWord: function (){
-    wx.setStorage({
-      key: 'storeWord',
-      data: this.data.word,
-    })
-  },
-
-  showSearchWord: function (){
-    var that = this
-    wx.getStorage({
-      key: 'storeWord',
-      success: function(res) {
+    that = this
+    wx.getUserInfo({
+      success: function (res) {
         that.setData({
-          storeWord:res.data
+          nickName: res.userInfo.nickName,
+          avatarUrl: res.userInfo.avatarUrl,
         })
       },
+      fail:res =>{
+        console.log('haha');
+      }
     })
   },
 
-  shareImage: function (){
-    wx.getImageInfo({
-      src: 'https://gss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/c75c10385343fbf2cdfb712fb27eca8064388fe3.jpg',
-      success: function(res) {
-        const ctx = wx.createCanvasContext('shareCanvas')
-        ctx.drawImage(res.path, 0, 0, 300, 500)
-
-        // 作者名称
-        ctx.setTextAlign('center')    // 文字居中
-        ctx.setFillStyle('#ffffff')  // 文字颜色：黑色
-        ctx.setFontSize(22)         // 文字字号：22px
-        ctx.fillText("作者：一斤代码",150, 250)
-
-        ctx.stroke()
-        ctx.draw()
-      },
-      fail: function(res) {},
-      complete: function(res) {},
+  clickStar: function (e) {
+    that = this
+    var index = e.currentTarget.dataset.index
+    var cards = that.data.cards
+    var star = "cards["+index +"].onStar"
+    this.setData({
+      [star]: !cards[index].onStar
     })
   },
 
-  onGotUserInfo: function (e){
-    console.log(e.detail.errMsg)
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
+  clickCell: function (e) {
+    var index = e.currentTarget.dataset.index
+    var cards = that.data.cards
+    var star = "cards[" + index + "].isFlag"
+    this.setData({
+      [star]: !cards[index].isFlag
+    })
+  },
+
+  clickSearchCode: function () {
+    console.log('点击了二维码');
+  },
+
+  clickHeaderClass: function (ev) {
+    this.setData({ currentTab: ev.currentTarget.dataset.index });
   }
-
 })

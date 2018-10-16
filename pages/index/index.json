@@ -1,8 +1,6 @@
 {
   "usingComponents": {
     "cell": "../component/component",
-    "header": "../header/header",
-    "i-button": "../../dist/button/index",
-    "i-tag": "../../dist/tag/index"
+    "header": "../header/header"
   }
 }
