@@ -1,10 +1,13 @@
  //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+     var that = this;
+      wx.getSystemInfo({
+        success: function(res) {
+          var isIpx = res.model.indexOf('iPhone X') > -1 ? true : false
+          that.globalData.isIpX = isIpx
+        },
+      }) 
 
     // 登录
     // wx.login({
@@ -34,6 +37,7 @@ App({
     // })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isIpX: true
   }
 })

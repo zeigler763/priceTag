@@ -1,0 +1,16 @@
+<!--pages/myRemark/myRemark.wxml-->
+<!-- 输入位置 -->
+<view>
+  <view class='flex colunm' style='background-color:#45b0fb;justify-content:space-between;padding-top:30rpx;'>
+    <text class='margin_left' style='font-size:28rpx;color:white;'>我的备注</text>
+    <image class='submit_btn' style='padding-bottom:30rpx;' src='/images/submit.png' mode='aspectFit' catchtap='clickSubmit'></image>
+  </view>
+  <textarea auto-height auto-focus placeholder="请输入您的备注" class="textArea"></textarea>
+</view>
+<!-- 添加图片 -->
+<view class='photo_add'>
+    <image class='photoImage addBtn' bindtap='clickImage' wx:for="{{avatarUrl}}"  data-index="{{index}}" wx:key="unique" src="{{item}}">
+      <image catchtap='deleteImage' data-index='{{index}}' class='delete' src='/images/delete.png'></image>
+    </image>
+    <image class='addBtn' bindtap="bindViewTap" src='/images/addpic.png' type="submit" hidden='{{buttonHidden}}'></image>
+</view>

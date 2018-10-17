@@ -8,7 +8,10 @@
     "pages/textView/textView",
     "pages/scanCode/scanCode",
     "pages/subsidyDetails/subsidyDetails",
-    "pages/animate/animate"
+    "pages/animate/animate",
+    "pages/detailsPage/detailsPage",
+    "pages/myPrice/myPrice",
+    "pages/myRemark/myRemark"
   ],
   "window": {
     "backgroundTextStyle": "light",

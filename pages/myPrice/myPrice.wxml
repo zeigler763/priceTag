@@ -1,0 +1,36 @@
+
+<!-- 头部 -->
+<view>
+  <view class='card_list_flag_content_top' catchtap='showGoodsDetails'>
+    <view style='padding: 24rpx;'>
+        <image style='width:200rpx;height:200rpx;vertical-align:top;' src='http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg'></image>
+    </view>
+    <view style='background-color: white;display: flex;flex-direction: column;'>
+    <text class='card_flag_title limit_line'>时尚变奏美式乡村现实简约实木卧室家具简约实木卧室家具简约实木卧室家具</text>
+        <text class='card_flag_shop'>时尚变奏</text>
+        <text class='card_flag_price'>￥190909</text>
+    </view>
+  </view>
+  <view class='flex' style='align-items: baseline;'>
+    <text class='myremark_title'>备注</text>
+    <text class='myremark_des'>有温暖的灯光营造氛围，还有柔和的纺织品光营造氛围，还有柔和的纺织品光营造氛围，还有柔和的纺织品光营造氛围，还有柔和的纺织品</text>
+  </view>
+</view>
+
+<form bindsubmit='fromSubmit'>
+  <view class='base_cell'>
+    <text class='padding_left'>当前价格:</text>
+    <text class='margin_left red_color font_fat'>￥13399.00</text>
+  </view>
+  <view class='base_cell' style='align-items:center'>
+      <text class='padding_left font_fat'>期望价格:</text>
+      <text class='margin_left font_fat'>￥</text>
+      <input class='padding_right' name='price' placeholder='低于此价格会通知您' style='flex:1;'></input>
+  </view>
+  <view class='base_cell' style='justify-content:space-between'>
+      <text class='padding_left'>短信通知</text>
+      <switch class='padding_right' checked="{{isChecked}}" bindchange="changeSwitch"></switch>
+  </view>
+  <button form-type='submit' style='background-color:red;color:white;margin:82rpx 30rpx 0 30rpx;border-radius: 50rpx;font-size:30rpx;'>确定</button>
+</form>
+

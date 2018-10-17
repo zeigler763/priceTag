@@ -1,0 +1,39 @@
+
+<!-- 除按钮整体 -->
+<view style='padding-bottom:130rpx;' class='backcolor'>
+  <!--banner-->
+<view class='banner'>
+    <swiper style='height:640rpx;' indicator-dots='true' indicator-active-color='#b31719'>
+    <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+      <swiper-item>
+          <image src='{{item}}' class='slide_image' bindtap='clickBannerTag' data-index='{{index}}'/>
+      </swiper-item>
+    </block>
+    </swiper>
+
+    <text style='font-size:30rpx;padding:20rpx 26rpx 0rpx 26rpx;'>美丽每家 时尚变奏美式乡村现实简约实木卧室家具实简约实木卧室家具实简约实木卧室家具</text>
+    <view style='display: flex; flex-direction: row;align-items:baseline;padding: 0 0 30rpx 26rpx;'>
+      <text class='banner_price'>￥169900.0</text>
+      <view class='border_price banner_price'>已经降价200元</view>
+    </view>
+</view>
+
+<!-- 我的备注 -->
+<view class='myremark flex'>
+  <view style='background-color:#ff5251;width:26rpx;'></view>
+  <view class='flex column' style='flex:1;'>
+    <text class='myremark_title'>我的备注</text>
+    <text class='myremark_des'>有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦格都</text>
+  </view>
+</view>
+</view>
+
+<!-- 底部按钮 -->
+<view class='bottom_btn flex column'>
+  <view class='flex'>
+  <view style='background-color:#efd13c'><text>留言商家</text></view>
+  <view style='background-color:#48d9be'><text>联系商家</text></view>
+  </view>
+  <view style='height:{{isIpX}};width:100%;'></view>
+</view>
+

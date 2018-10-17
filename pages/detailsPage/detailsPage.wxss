@@ -1,0 +1,78 @@
+
+
+page {
+  background-color: #f9f9f9;
+}
+
+view {
+  background-color: white;
+}
+
+.backcolor {
+  background-color: #f9f9f9;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner_price {
+  color: #b31719;
+  font-size: 26rpx;
+  padding: 20rpx 30rpx 0 0;
+  font-weight: 700;
+}
+
+.border_price {
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  padding: 5rpx 30rpx 5rpx 30rpx;
+  border: solid 1rpx #b31719;
+  border-radius: 20rpx;
+}
+
+.slide_image {
+  width: 100%;
+  height: 640rpx;
+}
+
+.myremark {
+  margin: 30rpx 0;
+}
+
+.myremark_title {
+  font-size: 30rpx;
+  font-weight: 700;
+  padding: 24rpx 24rpx 10rpx 24rpx;
+}
+
+.myremark_des {
+  font-size: 24rpx;
+  padding: 0rpx 24rpx 24rpx 24rpx;
+}
+
+.bottom_btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom_btn view {
+  height: 100rpx;
+  flex: 1;
+  color: white;
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
