@@ -13,23 +13,23 @@ Page({
     //卡片数据
     cards: [
       {
-        title: "卧室家具", price: "时尚简约时尚简约时尚简约时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬机了萨芬机了萨芬机了萨芬", onStar: true, isFlag: true, pics: [
+        title: "卧室家具", price: "时尚简约时尚简约时尚简约时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬机了萨芬机了萨芬机了萨芬", onStar: true, pics: [
           "http://pic35.photophoto.cn/20150409/0005018337384017_b.jpg",
           "http://pic24.photophoto.cn/20120923/0005018332564487_b.jpg",
           "http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg"
         ] },
-      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: true, isFlag: true },
-      { title: "音响设备", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: true, isFlag: false },
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: true, },
+      { title: "音响设备", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: true, },
       { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，开行不得发动机了萨芬", onStar: true, isFlag: false },
-      { title: "卧室家具", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬机了萨芬机了萨芬机了萨芬", onStar: false, isFlag: true },
-      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: false, isFlag: true },
+      { title: "卧室家具", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬机了萨芬机了萨芬机了萨芬", onStar: false, },
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: false, },
       {
-        title: "音响设备", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: false, isFlag: true, pics: [
+        title: "音响设备", price: "时尚简约", des: "有温暖的灯光营造氛围，宽心，酣然入梦，扣人心魄，开行不得发动机了萨芬", onStar: false, pics: [
           "http://pic35.photophoto.cn/20150409/0005018337384017_b.jpg",
           "http://pic24.photophoto.cn/20120923/0005018332564487_b.jpg",
           "http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg"
         ]},
-      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，开行不得发动机了萨芬", onStar: false, isFlag: true, pics:[
+      { title: "书桌", price: "时尚简约", des: "有温暖的灯光营造氛围，开行不得发动机了萨芬", onStar: false, pics:[
         "http://pic35.photophoto.cn/20150409/0005018337384017_b.jpg",
         "http://pic24.photophoto.cn/20120923/0005018332564487_b.jpg",
         "http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg"
@@ -61,13 +61,9 @@ Page({
     })
   },
 
+  //点击了页面
   clickCell: function (e) {
-    var index = e.currentTarget.dataset.index
-    var cards = that.data.cards
-    var star = "cards[" + index + "].isFlag"
-    this.setData({
-      [star]: !cards[index].isFlag
-    })
+    
   },
 
   clickSearchCode: function () {

@@ -117,7 +117,7 @@
 }
 
 .card_side {
-  height: auto;
+  height: 248rpx;
   width: 48rpx;
   padding-left: 15rpx;
 }
@@ -125,7 +125,6 @@
 .card_content {
   height: 122rpx;
   margin-right: 15rpx;
-  box-shadow: 1rpx 2rpx 3rpx 3rpx #ddd;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -187,7 +186,7 @@
 
 .card_list_flag_content {
   margin-right: 15rpx;
-  box-shadow: 1rpx 2rpx 3rpx 3rpx #ddd;
+  /* box-shadow: 1rpx 2rpx 3rpx 3rpx #ddd; */
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -195,6 +194,7 @@
 
 .card_list_flag_content_top {
   display: flex;
+  box-shadow: 1rpx 2rpx 3rpx 3rpx #ddd;
 }
 
 .card_flag_title {
@@ -229,7 +229,9 @@
 .card_list_flag_content_bottom {
   display: flex;
   flex-direction: column;
-  background-color: #fcf4d9
+  background-color: #fcf4d9;
+  margin: 0 30rpx;
+  box-shadow: 1rpx 2rpx 3rpx 3rpx #ddd;
 }
 
 .card_list_flag_content_bottom text {
@@ -241,6 +243,12 @@
 .card_list_flag_content_bottom_des {
   color: #333;
   font-weight: 400;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 

@@ -26,36 +26,9 @@
   <!-- 内容list -->
   <view style='padding:0 0 40rpx 0;'>
     <view style='display: flex; flex-direction: column;' catchtap='clickCell' data-index='{{index}}' wx:for="{{cards}}" wx:key="{{item.title}}">
-    <view hidden='{{!item.isFlag}}' class='card_list'>
+    <view class='card_list_flag'>
       <view>
-        <image class='card_side' src='/images/side_yellow.png' mode='right top' style='height:100%;'></image>
-      </view>
-      <view class='card_content'>
-      <view class='card_content_top'>
-        <view style='padding-left:15rpx;padding-right:10px;width:560rpx;display:flex;justify-content: flex-star;'>
-          <text style='padding-right:10rpx;'>{{item.des}}</text>
-          <text style='width:100rpx;'>{{item.title}}</text>
-        </view>
-        <view>
-          <view wx:if="{{item.onStar}}">
-            <image catchtap='clickStar' data-index="{{index}}" src='/images/star.png'></image>
-          </view>
-          <view wx:else>
-            <image catchtap='clickStar' data-index="{{index}}" src='/images/no_star.png'></image>
-          </view>
-        </view>
-      </view>
-      <view class='card_content_bottom'>
-        <text style='width:600rpx'>有温暖的灯光营造氛围有温暖的灯光营造氛围有温暖的灯光营造氛围</text>
-        <view>
-          <image src='http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg'></image>
-        </view>
-      </view>
-    </view>
-    </view>
-    <view hidden='{{item.isFlag}}' class='card_list_flag'>
-      <view>
-        <image class='card_side' src='/images/side_yellow.png' mode='right top' style='height:100%;'></image>
+        <image class='card_side' src='/images/side_yellow.png' mode='right top'></image>
       </view>
         <view class='card_list_flag_content'>
           <view class='card_list_flag_content_top' catchtap='showGoodsDetails'>
@@ -72,7 +45,7 @@
             <text style='color:#b31719;font-weight:700;' catchtap='clickToMyPrice'>理想价格:<text style='padding-left:10rpx;font-size:24rpx;'>￥14000.00</text></text>
             <view style="display:flex;">
               <text style='font-weight:700;flex-shrink:0' catchtap='clickToRemark'>我的备注:</text>
-              <text class='card_list_flag_content_bottom_des limit_line' style='padding-left:10rpx;font-size:26rpx;padding-right:30rpx'>有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦...</text>
+              <text class='card_list_flag_content_bottom_des' style='padding-left:10rpx;font-size:26rpx;padding-right:30rpx'>有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦...</text>
             </view>
             <view style='display:flex;padding: 20rpx 0 20rpx 0;'>
               <view wx:for="{{item.pics}}" wx:key="{{item}}">
