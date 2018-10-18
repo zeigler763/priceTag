@@ -86,6 +86,15 @@ Page({
     console.log('点击了二维码');
   },
 
+  pageChange: function (e) {
+    that = this;
+    var current = e.detail.current;
+    that.setData({
+      currentTab:current
+    })
+  },
+
+  //点击了页面header选项
   clickHeaderClass: function (ev) {
     this.setData({ currentTab: ev.currentTarget.dataset.index });
   },
