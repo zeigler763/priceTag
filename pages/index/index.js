@@ -5,6 +5,8 @@ var index = 0;
 var that;
 Page({
   data: {
+    menuTop:0,
+    menuFixed:false,
     nickName: '',
     avatarUrl: '/images/default_avart.png',
     pageCount: 10,
@@ -38,6 +40,9 @@ Page({
   },
   onLoad: function () {
     that = this
+    //添加顶部位置
+    this.initClientRect()
+
     wx.getUserInfo({
       success: function (res) {
         that.setData({
@@ -93,5 +98,29 @@ Page({
     wx.navigateTo({
       url: '../myRemark/myRemark',
     })
+  },
+  // 1.查询菜单栏距离文档顶部的距离menuTop
+  initClientRect:function () {
+    var that = this;
+    var query = wx.createSelectorQuery()
+    query.select('#affix').boundingClientRect()
+    query.exec(function (res) {
+      that.setData({
+        menuTop: res[0]['top']
+      })
+    })
+  },
+
+// 2.监听页面滚动距离scrollTop
+    onPageScroll: function (scroll) {
+      that = this
+      console.log(scroll.scrollTop)
+    if (that.data.menuFixed === (scroll.scrollTop > that.data.menuTop)) return;
+    // 3.当页面滚动距离scrollTop > menuTop菜单栏距离文档顶部的距离时，菜单栏固定定位
+    that.setData({
+      menuFixed: (scroll.scrollTop > that.data.menuTop)
+    })
   }
 })
+
+

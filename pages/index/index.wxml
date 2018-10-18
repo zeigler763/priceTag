@@ -18,13 +18,13 @@
   </view>
 
   <!-- headerBar -->
-  <scroll-view scroll-x="true" class="scroll-view-x">
+  <scroll-view scroll-x="true" id='affix' bindscroll="scrollTop" class="scroll-view-x {{menuFixed?'fixed':''}}">
       <view class=".hearder_title {{currentTab==index ? '.hearder_title_current' : ''}}" bindtap="clickHeaderClass" data-title="{{item}}" data-index="{{index}}" wx:key="{{item}}" wx:for="{{classes}}">{{item}}
       </view>
   </scroll-view>
 
   <!-- 内容list -->
-  <view style='padding:0 0 40rpx 0;'>
+  <view style='padding:{{menuFixed?"100rpx":"0"}} 0 40rpx 0;'>
     <view style='display: flex; flex-direction: column;' catchtap='clickCell' data-index='{{index}}' wx:for="{{cards}}" wx:key="{{item.title}}">
     <view class='card_list_flag'>
       <view>
