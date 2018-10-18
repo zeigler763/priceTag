@@ -102,7 +102,7 @@
   color: #3c3c3c;
   margin: 0 15rpx 0 15rpx;
   font-size: 28rpx;
-  border-width: 1rpx;
+  border-width: 2rpx;
   border-color: #ddd;
   border-style: solid;
   /* box-shadow: 2rpx 0rpx 2rpx 2rpx #ddd; */
