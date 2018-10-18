@@ -7,6 +7,7 @@ Page({
   data: {
     menuTop:0,
     menuFixed:false,
+    winHeight:'',
     nickName: '',
     avatarUrl: '/images/default_avart.png',
     pageCount: 10,
@@ -54,6 +55,20 @@ Page({
         console.log('haha');
       }
     })
+
+    //  高度自适应
+    wx.getSystemInfo({
+      success: function (res) {
+        var clientHeight = res.windowHeight,
+          clientWidth = res.windowWidth,
+          rpxR = 750 / clientWidth;
+        var calc = clientHeight * rpxR - 100;
+        console.log(calc)
+        that.setData({
+          winHeight: calc
+        });
+      }
+    });
   },
 
   clickStar: function (e) {
@@ -118,7 +133,7 @@ Page({
     if (that.data.menuFixed === (scroll.scrollTop > that.data.menuTop)) return;
     // 3.当页面滚动距离scrollTop > menuTop菜单栏距离文档顶部的距离时，菜单栏固定定位
     that.setData({
-      menuFixed: (scroll.scrollTop > that.data.menuTop)
+      menuFixed: (scroll.scrollTop >= that.data.menuTop)
     })
   }
 })

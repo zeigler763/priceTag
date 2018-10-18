@@ -23,7 +23,12 @@
       </view>
   </scroll-view>
 
-  <!-- 内容list -->
+<!-- 套一层滑动 -->
+<swiper style="height:{{winHeight}}rpx">
+  <block wx:for="{{classes}}"> 
+    <swiper-item>   
+             <!-- 内容list -->
+      <scroll-view scroll-y style='height:100%;' >
   <view style='padding:{{menuFixed?"100rpx":"0"}} 0 40rpx 0;'>
     <view style='display: flex; flex-direction: column;' catchtap='clickCell' data-index='{{index}}' wx:for="{{cards}}" wx:key="{{item.title}}">
     <view class='card_list_flag'>
@@ -56,7 +61,11 @@
         </view>
     </view>
   </view>
-  </view>
+</view>
+</scroll-view>
+        </swiper-item> 
+  </block> 
+</swiper>
 </view>
 
 
