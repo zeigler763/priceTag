@@ -2,5 +2,6 @@
   "usingComponents": {
     "cell": "../component/component",
     "header": "../header/header"
-  }
+  },
+  "disableScroll": true
 }

@@ -3,33 +3,27 @@
   <view class='top_nav'>
     <image class='top_bg' src="/images/top_backgroud.png"></image>
       <view class='back_view'>
-        <button class='top_avatar_btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        <button class='top_avatar_btn top_avatar' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
           <image class='top_avatar' src='{{avatarUrl}}'></image>
         </button>
         <text class='top_label'>我的收藏</text>
         <image bindtap='clickSearchCode' class='top_search_code' src='/images/search_code.png'></image>
-        <view class='top_count_label'>便签数
-          <text class='top_count'>{{pageCount}}<text>
-            <text class='top_num_label'>个</text>
-            </text>
-          </text>
-        </view>
       </view>
   </view>
 
   <!-- headerBar -->
-  <scroll-view scroll-x="true" id='affix' bindscroll="scrollTop" class="scroll-view-x {{menuFixed?'fixed':''}}">
+  <scroll-view scroll-x="true" id='affix' bindscroll="scrollTop" class="scroll-view-x">
       <view class=".hearder_title {{currentTab==index ? '.hearder_title_current' : ''}}" bindtap="clickHeaderClass" data-title="{{item}}" data-index="{{index}}" wx:key="{{item}}" wx:for="{{classes}}">{{item}}
       </view>
   </scroll-view>
 
 <!-- 套一层滑动 -->
 <swiper style="height:{{winHeight}}rpx">
-  <block wx:for="{{classes}}"> 
+  <block wx:for="{{classes}}" wx:key="{{itme}}"> 
     <swiper-item>   
              <!-- 内容list -->
       <scroll-view scroll-y style='height:100%;' >
-  <view style='padding:{{menuFixed?"100rpx":"0"}} 0 40rpx 0;'>
+  <view style='padding:0 0 40rpx 0;'>
     <view style='display: flex; flex-direction: column;' catchtap='clickCell' data-index='{{index}}' wx:for="{{cards}}" wx:key="{{item.title}}">
     <view class='card_list_flag'>
       <view>
