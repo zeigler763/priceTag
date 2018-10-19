@@ -1,3 +1,4 @@
+
 .left {
   float: left;
 }
@@ -69,29 +70,36 @@
 .scroll-view-x {
   white-space: nowrap;
   display: flex;
-  background-color: white;
-  padding-top: 20rpx;
-  padding-bottom: 20rpx;
+  background-color:  #f7f7f7;
 }
 
 .hearder_title {
   line-height: 56rpx;
   text-align: center;
   padding: 0 30rpx;
-  color: #3c3c3c;
-  margin: 0 15rpx 0 15rpx;
+  color: #848484;
+  margin: 20rpx 15rpx 20rpx 15rpx;
   font-size: 28rpx;
-  border-width: 2rpx;
-  border-color: #ddd;
+  border-width: 1rpx;
+  border-color: #dedede;
   border-style: solid;
-  /* box-shadow: 2rpx 0rpx 2rpx 2rpx #ddd; */
-  border-radius: 30rpx;
+  border-radius: 10rpx;
   display: inline-block;
 }
 
+.hearder_title:first-child {
+  margin: 0 15rpx 0 30rpx;
+}
+
+.hearder_title:last-child {
+  margin: 0 30rpx 0 15rpx;
+}
+
 .hearder_title_current {
-   color: white;
-   background-color: #e31f1f;
+   color: #444;
+   font-weight: 700;
+   background-color: white;
+   box-shadow: 2rpx 2rpx 2rpx 2rpx rgba(192, 192, 192, 0.2);
 }
 
 .card_list {
