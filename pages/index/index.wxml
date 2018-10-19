@@ -27,7 +27,7 @@
     <view style='display: flex; flex-direction: column;' catchtap='clickCell' data-index='{{index}}' wx:for="{{cards}}" wx:key="{{item.title}}">
     <view class='card_list_flag'>
       <view>
-        <image class='card_side' src='/images/side_yellow.png' mode='right top'></image>
+        <image class='card_side' src='/images/side_yellow.png' mode='aspectFill'></image>
       </view>
         <view class='card_list_flag_content'>
           <view class='card_list_flag_content_top' catchtap='showGoodsDetails'>

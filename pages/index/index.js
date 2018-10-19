@@ -84,8 +84,33 @@ Page({
     
   },
 
+  //点击进入二维码界面
   clickSearchCode: function () {
-    console.log('点击了二维码');
+    wx.scanCode({
+      onlyFromCamera: false,
+      scanType: ["qrCode"],
+      success: function (res) {
+        console.log(res)
+        wx.showModal({
+          title: res.result,
+          content: '这是一个窗口',
+          showCancel: true,
+          cancelText: '',
+          cancelColor: '',
+          confirmText: '确认',
+          confirmColor: '#999999',
+          success: function (res) {
+            if (res.confirm) {
+
+            }
+          },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
 
   pageChange: function (e) {
@@ -115,17 +140,13 @@ Page({
   },
 
 
-  //滑动显示到中间
+  //滑动title显示到中间
   scrollToCenter: function (index,fn) {
     var obj = wx.createSelectorQuery();
 
-    obj.selectAll('#_title').boundingClientRect(function (rect) {
-
-    }).select('#affix').fields({
+    obj.selectAll('#_title').boundingClientRect(function (rect) {}).select('#affix').fields({
       scrollOffset: true,
-    }, function (res) {
-
-    })
+    }, function (res) {})
     obj.exec(function (res) {
       var rectW = res[0][index].width
       var rectLeft = res[0][index].left
