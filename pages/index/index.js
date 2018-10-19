@@ -94,6 +94,7 @@ Page({
     that.setData({
       currentTab:current
     })
+    this.scrollToCenter(current)
   },
 
   //点击了页面header选项
@@ -105,27 +106,39 @@ Page({
     })
     var scal = app.globalData.pxScal
     var index = ev.currentTarget.dataset.index;
-    this.setData({ currentTab: index });
-    var indexOffLeft = ev.currentTarget.offsetLeft;
-    console.log(ev)
-    
-    var obj = wx.createSelectorQuery();
-    obj.selectAll('#_title').boundingClientRect(function (rect) {
-      var rectW = rect[index].width
-      console.log(rect[index].scrollLeft)
-      console.log(indexOffLeft)
-      //当前中点离中线多远
-        var scrollY = (indexOffLeft + rectW / 2 - 375/2)
-        that.setData({
-          scrollLeft: scrollY
-        })
+    that.setData({ currentTab: index });
+    this.scrollToCenter(index)
+  },
 
-        that.setData({
-          duration: '300'
-        })
+
+  //滑动显示到中间
+  scrollToCenter: function (index) {
+    var obj = wx.createSelectorQuery();
+
+    obj.selectAll('#_title').boundingClientRect(function (rect) {
+
+    }).select('#affix').fields({
+      scrollOffset: true,
+    }, function (res) {
+
     })
-    obj.exec();
-  
+    obj.exec(function (res) {
+      var rectW = res[0][index].width
+      var rectLeft = res[0][index].left
+      var scrollLeft = res[1].scrollLeft
+      var offsetLeft = rectLeft + scrollLeft
+
+      //当前中点离中线多远
+      var scrollY = (offsetLeft + rectW / 2 - 375 / 2)
+      that.setData({
+        scrollLeft: scrollY
+      })
+
+      that.setData({
+        duration: '300'
+      })
+
+    });
   },
 
   scrollTop: function (e) {
