@@ -107,12 +107,16 @@ Page({
     var scal = app.globalData.pxScal
     var index = ev.currentTarget.dataset.index;
     that.setData({ currentTab: index });
-    this.scrollToCenter(index)
+    this.scrollToCenter(index,function(){
+      that.setData({
+        duration: '300'
+      })
+    })
   },
 
 
   //滑动显示到中间
-  scrollToCenter: function (index) {
+  scrollToCenter: function (index,fn) {
     var obj = wx.createSelectorQuery();
 
     obj.selectAll('#_title').boundingClientRect(function (rect) {
@@ -133,11 +137,10 @@ Page({
       that.setData({
         scrollLeft: scrollY
       })
-
-      that.setData({
-        duration: '300'
-      })
-
+      
+      if(fn){
+        fn()
+      }
     });
   },
 
