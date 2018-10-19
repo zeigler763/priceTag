@@ -5,6 +5,8 @@ var index = 0;
 var that;
 Page({
   data: {
+    duration:'300',
+    scrollLeft:0,
     menuTop:0,
     menuFixed:false,
     winHeight:'',
@@ -96,7 +98,39 @@ Page({
 
   //点击了页面header选项
   clickHeaderClass: function (ev) {
-    this.setData({ currentTab: ev.currentTarget.dataset.index });
+    that = this
+    //设置滑动时间
+    that.setData({
+      duration:'0'
+    })
+    var scal = app.globalData.pxScal
+    var index = ev.currentTarget.dataset.index;
+    this.setData({ currentTab: index });
+    var indexOffLeft = ev.currentTarget.offsetLeft;
+    console.log(ev)
+    
+    var obj = wx.createSelectorQuery();
+    obj.selectAll('#_title').boundingClientRect(function (rect) {
+      var rectW = rect[index].width
+      console.log(rect[index].scrollLeft)
+      console.log(indexOffLeft)
+      //当前中点离中线多远
+        var scrollY = (indexOffLeft + rectW / 2 - 375/2)
+        that.setData({
+          scrollLeft: scrollY
+        })
+
+        that.setData({
+          duration: '300'
+        })
+    })
+    obj.exec();
+  
+  },
+
+  scrollTop: function (e) {
+    that = this
+    that.data.scrollLeft = e.detail.scrollLeft
   },
 
   //跳到商品详情

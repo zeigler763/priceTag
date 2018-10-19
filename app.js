@@ -7,7 +7,9 @@ App({
           var isIpx = res.model.indexOf('iPhone X') > -1 ? true : false
           that.globalData.isIpX = isIpx
         },
-      }) 
+      })
+
+    that.globalData.pxScal = 750/wx.getSystemInfoSync().windowWidth; 
 
     // 登录
     // wx.login({
@@ -38,6 +40,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    isIpX: true
+    isIpX: true,
+    pxScal:0,
   }
 })

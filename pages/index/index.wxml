@@ -12,13 +12,13 @@
   </view>
 
   <!-- headerBar -->
-  <scroll-view scroll-x="true" id='affix' bindscroll="scrollTop" class="scroll-view-x">
-      <view class=".hearder_title {{currentTab==index ? '.hearder_title_current' : ''}}" bindtap="clickHeaderClass" data-title="{{item}}" data-index="{{index}}" wx:key="{{item}}" wx:for="{{classes}}">{{item}}
+  <scroll-view scroll-x="true" id='affix' bindscroll="scrollTop" class="scroll-view-x" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
+      <view class=".hearder_title {{currentTab==index ? '.hearder_title_current' : ''}}" bindtap="clickHeaderClass" data-title="{{item}}" data-index="{{index}}" id="_title" wx:key="{{item}}" wx:for="{{classes}}">{{item}}
       </view>
   </scroll-view>
 
 <!-- 套一层滑动 -->
-<swiper style="height:{{winHeight}}rpx" bindchange='pageChange' current='{{currentTab}}' circular="true">
+<swiper style="height:{{winHeight}}rpx" bindchange='pageChange' current='{{currentTab}}' duration="{{duration}}">
   <block wx:for="{{classes}}" wx:key="{{itme}}"> 
     <swiper-item>   
              <!-- 内容list -->
