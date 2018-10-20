@@ -20,12 +20,35 @@
 
 <!-- 我的备注 -->
 <view class='myremark flex'>
-  <view style='background-color:#ff5251;width:26rpx;'></view>
+  <image class='card_side' src='/images/side_yellow.png' mode='aspectFill'></image>
   <view class='flex column' style='flex:1;'>
     <text class='myremark_title'>我的备注</text>
     <text class='myremark_des'>有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦格都</text>
   </view>
 </view>
+
+<view class="swiper-tab" id='affix'>
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">商品详情</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">商家地址</view>
+</view>
+
+<view class="swiper-no-swiping">
+<!-- 透明view来禁止滑动 -->
+  <view class='top'></view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style='height:{{imgheights}}rpx'>
+    <!-- 商品详情 -->
+    <swiper-item>
+      <block wx:for-items="{{imgUrls}}" wx:key="{{index}}">
+      <image class="image_detail" src="{{item}}" mode='widthFix' bindload="imageLoad" />
+      </block>
+    </swiper-item>
+    <!-- 商家地址 -->
+    <swiper-item>
+      <view>我是商家地址</view>
+    </swiper-item>
+  </swiper>
+</view>
+
 </view>
 
 <!-- 底部按钮 -->
