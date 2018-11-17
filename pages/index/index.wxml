@@ -44,7 +44,7 @@
             <text style='color:#b31719;font-weight:700;' catchtap='clickToMyPrice'>理想价格:<text style='padding-left:10rpx;font-size:24rpx;'>￥14000.00</text></text>
             <view style="display:flex;">
               <text style='font-weight:700;flex-shrink:0' catchtap='clickToRemark'>我的备注:</text>
-              <text class='card_list_flag_content_bottom_des' style='padding-left:10rpx;font-size:26rpx;padding-right:30rpx'>有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦...</text>
+              <text class='card_list_flag_content_bottom_des' style='padding-left:10rpx;padding-right:30rpx'>有温暖的灯光营造氛围，还有柔和的纺织品相伴，而这一切的价格都让您可大放宽心，悍然如梦...</text>
             </view>
             <view style='display:flex;padding: 20rpx 0 20rpx 0;'>
               <view wx:for="{{item.pics}}" wx:key="{{item}}">
