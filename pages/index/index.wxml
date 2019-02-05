@@ -3,8 +3,8 @@
   <view class='top_nav'>
     <image class='top_bg' src="/images/top_backgroud.png"></image>
       <view class='back_view'>
-        <button class='top_avatar_btn top_avatar' open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-          <image class='top_avatar' src='{{avatarUrl}}'></image>
+        <button class='top_avatar_btn top_avatar'>
+          <open-data type="userAvatarUrl"></open-data>
         </button>
         <text class='top_label'>我的收藏</text>
         <image bindtap='clickSearchCode' class='top_search_code' src='/images/search_code.png'></image>
@@ -32,7 +32,7 @@
         <view class='card_list_flag_content'>
           <view class='card_list_flag_content_top' catchtap='showGoodsDetails'>
             <view style='padding: 24rpx;'>
-               <image style='width:200rpx;height:200rpx;vertical-align:top;' src='http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg'></image>
+               <image style='width:200rpx;height:200rpx;vertical-align:top;' src='http://pic24.photophoto.cn/20120923/0005018332564487_b.jpg'></image>
             </view>
             <view style='background-color: white;display: flex;flex-direction: column;'>
               <text class='card_flag_title limit_line'>时尚变奏美式乡村现实简约实木卧室家具简约实木卧室家具简约实木卧室家具</text>

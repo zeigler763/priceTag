@@ -8,5 +8,5 @@
   
 <view bindtap="scanCode">扫一扫</view>
   <input name="code" type="text" maxlength="255" placeholder='haha'></input>
-<cell wx:for="{{array}}" title="{{item.title}}" price="{{item.price}}" distance="{{item.distance}}"></cell>
+<cell wx:for="{{array}}" title="{{item.title}}" price="{{item.price}}" distance="{{item.distance}}" wx:key="{{item}}"></cell>
 
