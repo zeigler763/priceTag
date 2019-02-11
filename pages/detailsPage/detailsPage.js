@@ -14,7 +14,6 @@ Page({
     imgUrls:[
       "http://pic35.photophoto.cn/20150409/0005018337384017_b.jpg",
       "http://pic24.photophoto.cn/20120923/0005018332564487_b.jpg",
-      "http://pic.58pic.com/58pic/14/05/71/82v58PICBuM_1024.jpg"
     ]
   },
 

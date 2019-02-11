@@ -25,10 +25,10 @@
       <text class='margin_left font_fat'>￥</text>
       <input class='padding_right' name='price' placeholder='低于此价格会通知您' style='flex:1;'></input>
   </view>
-  <view class='base_cell' style='justify-content:space-between'>
+  <!-- <view class='base_cell' style='justify-content:space-between'>
       <text class='padding_left'>短信通知</text>
       <switch class='padding_right' checked="{{isChecked}}" bindchange="changeSwitch"></switch>
-  </view>
+  </view> -->
   <button form-type='submit' style='background-color:red;color:white;margin:82rpx 30rpx 0 30rpx;border-radius: 50rpx;font-size:30rpx;'>确定</button>
 </form>
 
