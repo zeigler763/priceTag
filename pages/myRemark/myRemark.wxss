@@ -78,3 +78,101 @@ view {
   height: 450rpx;
   font-size: 30rpx;
 }
+
+
+page {
+  background-color: #f9f9f9;
+}
+
+view {
+  background-color: white;
+}
+
+.backcolor {
+  background-color: #f9f9f9;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.padding_left {
+  padding-left: 20rpx;
+}
+
+.margin_left {
+  margin-left: 15rpx;
+}
+
+.padding_right {
+  padding-right: 20rpx;
+}
+
+.margin_right {
+  margin-right: 15rpx;
+}
+
+.red_color {
+  color: #b31719;
+}
+
+.font_fat {
+  font-weight: 700;
+}
+
+.card_list_flag_content_top {
+  display: flex;
+}
+
+.card_flag_title {
+  color: #3c3c3c;
+  font-size: 26rpx;
+  font-weight: 600;
+  padding: 24rpx 30rpx 0 0;
+}
+
+.card_flag_shop {
+  color: #bdbdbd;
+  font-size: 24rpx;
+  padding: 20rpx 30rpx 0 0;
+}
+
+.card_flag_price {
+  color: #b31719;
+  font-size: 24rpx;
+  padding: 20rpx 30rpx 0 0;
+  font-weight: 700;
+}
+
+.limit_line {
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.myremark_title {
+  font-size: 20rpx;
+  font-weight: 700;
+  padding: 0rpx 0rpx 10rpx 24rpx;
+  flex-shrink:0;
+}
+
+.myremark_des {
+  font-size: 20rpx;
+  padding: 0rpx 24rpx 24rpx 24rpx;
+}
+
+.base_cell {
+  height: 112rpx;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  line-height: 112rpx;
+  display: flex;
+}

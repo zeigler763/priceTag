@@ -10,13 +10,12 @@
     "pages/subsidyDetails/subsidyDetails",
     "pages/animate/animate",
     "pages/detailsPage/detailsPage",
-    "pages/myPrice/myPrice",
     "pages/myRemark/myRemark"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#45B0FB",
     "navigationBarTitleText": "随买手记",
-    "navigationBarTextStyle": "wiite"
+    "navigationBarTextStyle": "white"
   }
 }

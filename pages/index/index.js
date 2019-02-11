@@ -177,19 +177,6 @@ Page({
       url: '../detailsPage/detailsPage',
     })
   },
-
-  //跳到添加理想价格
-  clickToMyPrice: function () {
-    // wx.navigateTo({
-    //   url: '../myPrice/myPrice',
-    // })
-    wx.login({
-      success(res) {
-        console.log(res.code)
-      }
-    })
-  },
-
   //跳转到我的备注
   clickToRemark: function () {
     wx.navigateTo({
